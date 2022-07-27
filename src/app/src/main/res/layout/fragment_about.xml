@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            tools:context="fragment.AboutFragment">
+
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="272dp"
+                android:layout_height="92dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ascendit"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvThanks"
+                android:layout_width="269dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="@string/about_thank_you"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/ivLogo"
+                app:layout_constraintStart_toStartOf="@+id/ivLogo"
+                app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
+
+            <ImageView
+                android:id="@+id/ivSignature"
+                android:layout_width="272dp"
+                android:layout_height="46dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/signature"
+                app:layout_constraintEnd_toEndOf="@+id/tvThanks"
+                app:layout_constraintHorizontal_bias="0.565"
+                app:layout_constraintStart_toStartOf="@+id/tvThanks"
+                app:layout_constraintTop_toBottomOf="@+id/tvThanks" />
+
+            <TextView
+                android:id="@+id/tvContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="@string/about_contact_me"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/ivSignature"
+                app:layout_constraintStart_toStartOf="@+id/ivSignature"
+                app:layout_constraintTop_toBottomOf="@+id/ivSignature" />
+
+            <ImageView
+                android:id="@+id/ivMail"
+                android:layout_width="134dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/mail"
+                app:layout_constraintEnd_toEndOf="@+id/tvContact"
+                app:layout_constraintStart_toStartOf="@+id/tvContact"
+                app:layout_constraintTop_toBottomOf="@+id/tvContact" />
+
+            <TextView
+                android:id="@+id/tvMedia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="@string/about_find_me"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/ivWebsite"
+                app:layout_constraintStart_toStartOf="@+id/ivLinkedin"
+                app:layout_constraintTop_toBottomOf="@+id/ivMail" />
+
+            <ImageView
+                android:id="@+id/ivLinkedin"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="64dp"
+                android:src="@drawable/linkedin"
+                app:layout_constraintBottom_toBottomOf="@+id/ivGithub"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivGithub"
+                android:layout_width="60dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/github"
+                app:layout_constraintEnd_toStartOf="@+id/ivWebsite"
+                app:layout_constraintHorizontal_bias="0.485"
+                app:layout_constraintStart_toEndOf="@+id/ivLinkedin"
+                app:layout_constraintTop_toBottomOf="@+id/tvMedia" />
+
+            <ImageView
+                android:id="@+id/ivWebsite"
+                android:layout_width="60dp"
+                android:layout_height="64dp"
+                android:layout_marginEnd="64dp"
+                android:src="@drawable/web"
+                app:layout_constraintBottom_toBottomOf="@+id/ivGithub"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tvVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="24dp"
+                android:text="@string/version_info"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivGithub" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

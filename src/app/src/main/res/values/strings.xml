@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">OneTimeAlarm</string>
+    <string name="app_long_name">One time alarm</string>
+    <string name="about_thank_you">Thank you for using my app</string>
+    <string name="about_contact_me">Contact me</string>
+    <string name="about_find_me">Find me on</string>
+    <string name="version_info">OneTimeAlarm, version 1.0</string>
+    <string name="mail_subject">OTA: Subject</string>
+    <string name="website_url">https://www.ascendit.pl</string>
+    <string name="mail_address">support@ascendit.pl</string>
+    <string name="linkedin_url">https://www.linkedin.com/in/mateuszdlubak</string>
+    <string name="github_url">https://github.com/matdlu</string>
+    <string name="btAdd_contentDesc">Add alarm</string>
+    <string name="tvNoAlarms_text">To add alarm press the button in the bottom right corner.</string>
+    <string name="alarm_item_time_example">19:00</string>
+    <string name="alarm_item_day_example">Tomorrow</string>
+    <string name="alarm_item_name_example">Example name</string>
+    <string name="dialog_alarm_time_hint">Time</string>
+    <string name="dialog_alarm_day_hint">Day</string>
+    <string name="dialog_alarm_name_hint">Name</string>
+    <string name="stop_alarm_turn_off_alarm">Turn off alarm</string>
+    <string name="choose_ringtone">Choose ringtone</string>
+    <string name="alarm_sound">Alarm sound</string>
+    <string name="vibrate">Vibrate</string>
+    <string name="notification_channel_name">Alarms</string>
+    <string name="notification_channel_desc">Receive alarms</string>
+    <string name="dialog_edit_title">Edit alarm</string>
+    <string name="dialog_add_title">Add alarm</string>
+    <string name="dialog_save">Save</string>
+    <string name="dialog_cancel">Cancel</string>
+    <string name="today">Today</string>
+    <string name="tommorow">Tomorrow</string>
+    <string name="dialog_delete">Delete</string>
+    <string name="menu_settings">Settings</string>
+    <string name="menu_about">About</string>
+</resources>

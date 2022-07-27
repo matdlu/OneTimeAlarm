@@ -1,0 +1,1 @@
+Tworzenie alarmów automatycznie usuwających się po wywołaniu.

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jednorazowy alarm</string>
+    <string name="about_thank_you">Dziękuje za korzystanie z mojej aplikacji</string>
+    <string name="app_long_name">Jednorazowy alarm</string>
+    <string name="version_info">Jednorazowy alarm, wersja 1.0</string>
+    <string name="about_contact_me">Skontaktuj się ze mną</string>
+    <string name="about_find_me">Znajdź mnie na</string>
+    <string name="mail_subject">OTA: Temat</string>
+    <string name="website_url">https://www.ascendit.pl</string>
+    <string name="mail_address">support@ascendit.pl</string>
+    <string name="linkedin_url">https://www.linkedin.com/in/mateuszdlubak</string>
+    <string name="github_url">https://github.com/matdlu</string>
+    <string name="btAdd_contentDesc">Dodaj alarm</string>
+    <string name="tvNoAlarms_text">Aby dodać alarm naciśnij przycisk w prawym dolnym rogu</string>
+    <string name="alarm_item_day_example">Dzisiaj</string>
+    <string name="alarm_item_time_example">19:00</string>
+    <string name="alarm_item_name_example">Przykładowa nazwa</string>
+    <string name="dialog_alarm_time_hint">Czas</string>
+    <string name="dialog_alarm_day_hint">Dzień</string>
+    <string name="dialog_alarm_name_hint">Nazwa</string>
+    <string name="stop_alarm_turn_off_alarm">Wyłącz alarm</string>
+    <string name="choose_ringtone">Wybierz dzwonek</string>
+    <string name="alarm_sound">Dzwonek</string>
+    <string name="vibrate">Wibracje</string>
+    <string name="notification_channel_name">Alarmy</string>
+    <string name="notification_channel_desc">Otrzymuj alarmy</string>
+    <string name="dialog_edit_title">Edytuj alarm</string>
+    <string name="dialog_add_title">Dodaj alarm</string>
+    <string name="dialog_save">Zapisz</string>
+    <string name="dialog_cancel">Anuluj</string>
+    <string name="today">Dzisiaj</string>
+    <string name="tommorow">Jutro</string>
+    <string name="dialog_delete">Usuń</string>
+    <string name="menu_settings">Ustawienia</string>
+    <string name="menu_about">Informacje o aplikacji</string>
+</resources>
