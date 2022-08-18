@@ -33,13 +33,11 @@ class StopAlarmActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        Log.d(lTag, "onCreate")
 
         getSupportActionBar()?.hide()
 
         val datetimeStr = intent.getStringExtra("ALARM_DATETIME")
         if ( datetimeStr == null ) {
-            Log.e(lTag, "ALARM_DATETIME is null")
             finish()
             return
         }
@@ -47,12 +45,10 @@ class StopAlarmActivity : AppCompatActivity() {
 
         val alarmTime24 = intent.getStringExtra("ALARM_TIME24")
         if ( alarmTime24 == null ) {
-            Log.e(lTag, "ALARM_TIME24 is null")
         }
 
         val alarmName = intent.getStringExtra("ALARM_NAME")
         if ( alarmName == null ) {
-            Log.e(lTag, "ALARM_NAME is null")
         }
 
         binding = ActivityStopAlarmBinding.inflate(layoutInflater)

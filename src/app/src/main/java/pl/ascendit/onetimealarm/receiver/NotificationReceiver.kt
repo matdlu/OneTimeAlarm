@@ -41,19 +41,15 @@ class NotificationReceiver : BroadcastReceiver() {
 
         val datetimeStr = intent.getStringExtra("ALARM_DATETIME")
         if (datetimeStr == null) {
-            Log.e(lTag,"datetimeStr is null")
             return
         }
 
         val datetime = LocalDateTime.parse(datetimeStr)
-        Log.d(lTag, "datetime: ${datetimeStr}")
 
         val triggered: Alarm? = AlarmLogic.getTriggeredAlarm(datetime)
         if (triggered == null) {
-            Log.e(lTag, "Alarm triggered but no alarm found in database.")
             return
         }
-        Log.d(lTag, "triggered alarm: ${triggered}")
         AlarmLogic.deleteAlarm(context, datetimeStr, true)
 
         val notificationId = AlarmLogic.getNotificationId(datetimeStr)

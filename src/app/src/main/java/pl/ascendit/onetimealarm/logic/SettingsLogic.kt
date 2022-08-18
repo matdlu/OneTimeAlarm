@@ -32,11 +32,9 @@ object SettingsLogic {
     var soundOn: Boolean = soundDefault
 
     fun load(context: Context) {
-        Log.d(lTag, "preferences loading")
         val preferences = PreferenceManager.getDefaultSharedPreferences(context)
         soundOn = preferences.getBoolean("sound", soundDefault)
         vibrateOn = preferences.getBoolean("vibrate", vibrateDefault)
-        Log.d(lTag, "preferences loaded")
     }
 
     fun setSound(value: Boolean) {

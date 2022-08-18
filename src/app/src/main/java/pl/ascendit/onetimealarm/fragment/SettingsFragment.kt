@@ -65,7 +65,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
         soundPreference.onPreferenceChangeListener = object : Preference.OnPreferenceChangeListener {
             override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
                 val value = newValue as Boolean
-                Log.d(lTag, "sound set to ${value}")
                 SettingsLogic.setSound(value)
                 return true
             }
@@ -81,7 +80,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
         vibratePreference.onPreferenceChangeListener = object : Preference.OnPreferenceChangeListener {
             override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
                 val value = newValue as Boolean
-                Log.d(lTag, "vibrate set to ${value}")
                 SettingsLogic.setVibrate(value)
                 return true
             }
@@ -97,7 +95,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
         ringtonePickerResultLauncher = activity.registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
             if (result.resultCode == Activity.RESULT_OK) {
                 val uri: Uri? = result.data?.getParcelableExtra(RingtoneManager.EXTRA_RINGTONE_PICKED_URI)
-                Log.d(lTag, "picked ringtone uri: ${uri}")
                 if (uri != null) {
                     RingtoneManager.setActualDefaultRingtoneUri(
                         activity.baseContext,

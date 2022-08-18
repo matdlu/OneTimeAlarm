@@ -91,7 +91,6 @@ class AlarmFragment : Fragment(), Loadable {
             }
             onAlarmBinded = {
                 if ( ! (TimeHelper.isToday(it.datetime) || TimeHelper.isTommorow(it.datetime)) ) {
-                    Log.e("ALARM NOT FIRED", "deleting alarm ${it}")
                     AlarmLogic.deleteAlarm(requireContext(), it)
                 }
             }

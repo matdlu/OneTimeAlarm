@@ -41,7 +41,6 @@ object AlarmLogic {
     var initialized = false
 
     private fun scheduleAlarm(context: Context, alarm: Alarm) {
-        Log.d(lTag, "scheduling alarm: ${alarm}")
         val pendingIntent = PendingIntentHelper.createNotificationReceiver(context, alarm)
         alarmManager.setAlarmClock(
             AlarmManager.AlarmClockInfo(TimeHelper.toEpochMilli(alarm.datetime), pendingIntent),
@@ -50,7 +49,6 @@ object AlarmLogic {
     }
 
     private fun unscheduleAlarm(context: Context, alarm: Alarm) {
-        Log.d(lTag, "unscheduling alarm: ${alarm}")
         val pendingIntent = PendingIntentHelper.createNotificationReceiver(context, alarm)
         alarmManager.cancel(pendingIntent)
     }
@@ -87,10 +85,8 @@ object AlarmLogic {
     fun deleteAlarm(context: Context, datetimeStr: String, fromReceiver: Boolean = false) {
         val triggered = getTriggeredAlarm(LocalDateTime.parse(datetimeStr))
         if ( triggered == null ) {
-            Log.e(lTag, "Alarm triggered but no alarm found in database.")
             return
         }
-        Log.d(lTag, "triggered alarm: ${triggered}")
         deleteAlarm(context, triggered, fromReceiver)
     }
 
@@ -100,7 +96,6 @@ object AlarmLogic {
             for (alarm in alarmDatabase.alarms.getAll()) {
                 if (alarm.datetime.isEqual(alarmDatetime)) {
                     triggered = alarm
-                    Log.d(lTag, "Alarm found: ${triggered}")
                     break
                 }
             }
@@ -120,7 +115,6 @@ object AlarmLogic {
 
 
     fun restartAllAlarms(context: Context) {
-        Log.d(lTag, "restarting all alarms")
         thread {
             for (alarm in alarmDatabase.alarms.getAll()) {
                 scheduleAlarm(context, alarm)

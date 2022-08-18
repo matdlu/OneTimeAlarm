@@ -34,7 +34,6 @@ class UpdateOrRebootReceiver : BroadcastReceiver() {
     val lTag = "UpdateOrRebootReceiver"
 
     override fun onReceive(context: Context, intent: Intent) {
-        Log.d(lTag, "received")
         AlarmLogic.alarmDatabase = AlarmDatabase.open(context)
         AlarmLogic.alarmManager = context.getSystemService(ALARM_SERVICE) as AlarmManager
         AlarmLogic.restartAllAlarms(context)

@@ -92,10 +92,8 @@ class DialogAlarmEdit(var alarm: Alarm) : DialogFragment() {
                 val tommorow = today.plusDays(1)
                 alarm.setMonthAndDay(tommorow)
             } else {
-                Log.e(lTag, "dayStr unknown value: ${dayStr}")
                 alarm.setMonthAndDay(today) // defaulting to today in case of a bug
             }
-            Log.d(lTag, "day set to ${alarm.day()}")
         }
 
         // tfName
