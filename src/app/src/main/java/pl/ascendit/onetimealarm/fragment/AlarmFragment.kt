@@ -53,7 +53,7 @@ class AlarmFragment : Fragment(), Loadable {
         super.onViewCreated(view, savedInstanceState)
 
         val funNoAlarms = {
-            binding.tvNoAlarms.isVisible = if ( adapter!!.itemCount <= 0 ) true else false
+            binding.tvNoAlarms.visibility = if ( adapter!!.itemCount <= 0 ) View.VISIBLE else View.GONE
         }
 
         adapter = AlarmItemAdapter().apply {
