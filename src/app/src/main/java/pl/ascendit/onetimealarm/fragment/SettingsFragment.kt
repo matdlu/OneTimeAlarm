@@ -45,7 +45,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
             title = soundTitle
         }
         soundPreference.onPreferenceChangeListener = object : Preference.OnPreferenceChangeListener {
-            override fun onPreferenceChange(preference: Preference?, newValue: Any?): Boolean {
+            override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
                 val value = newValue as Boolean
                 Log.d(lTag, "sound set to ${value}")
                 SettingsLogic.setSound(value)
@@ -61,7 +61,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
             title = vibrateTitle
         }
         vibratePreference.onPreferenceChangeListener = object : Preference.OnPreferenceChangeListener {
-            override fun onPreferenceChange(preference: Preference?, newValue: Any?): Boolean {
+            override fun onPreferenceChange(preference: Preference, newValue: Any?): Boolean {
                 val value = newValue as Boolean
                 Log.d(lTag, "vibrate set to ${value}")
                 SettingsLogic.setVibrate(value)
@@ -102,7 +102,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
 
     inner class RingtonePreferenceClickListener() : Preference.OnPreferenceClickListener {
-        override fun onPreferenceClick(preference: Preference?): Boolean {
+        override fun onPreferenceClick(preference: Preference): Boolean {
             if ((Build.VERSION.SDK_INT >= Build.VERSION_CODES.M ) && (! Settings.System.canWrite(context))) {
                 val intent = Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS)
                 startActivity(intent)

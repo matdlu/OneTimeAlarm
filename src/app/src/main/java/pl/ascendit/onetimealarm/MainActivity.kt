@@ -20,6 +20,7 @@ import pl.ascendit.onetimealarm.receiver.NotificationReceiver
 class MainActivity : AppCompatActivity(), Navigable {
     private lateinit var alarmFragment: AlarmFragment
     private lateinit var settingsFragment: SettingsFragment
+    private var aboutFragment: AboutFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,13 +44,11 @@ class MainActivity : AppCompatActivity(), Navigable {
         settingsFragment = SettingsFragment()
         settingsFragment.register(this)
 
-        supportFragmentManager.beginTransaction()
-            .add(R.id.container, alarmFragment, alarmFragment.javaClass.name)
-            .commit()
+        navigate(Navigable.Destination.Alarm)
     }
 
     // Options
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = MenuInflater(this)
         inflater.inflate(R.menu.menu, menu)
         return super.onCreateOptionsMenu(menu)
@@ -70,16 +69,24 @@ class MainActivity : AppCompatActivity(), Navigable {
     }
 
     // Navigation
+    var level = 0
+
     override fun navigate(to: Navigable.Destination) {
         when (to) {
             Navigable.Destination.About -> {
-                goToFragmentAndAddToBackStack(AboutFragment(), AboutFragment::class.java.name)
+                if ( aboutFragment == null ) {
+                    aboutFragment = AboutFragment()
+                }
+                goToFragment(aboutFragment!!, AboutFragment::class.java.name)
+                level = 1
             }
             Navigable.Destination.Settings -> {
-                goToFragmentAndAddToBackStack(settingsFragment, SettingsFragment::class.java.name)
+                goToFragment(settingsFragment, SettingsFragment::class.java.name)
+                level = 1
             }
             Navigable.Destination.Alarm -> {
                 goToFragment(alarmFragment, AlarmFragment::class.java.name)
+                level = 0
             }
         }
     }
@@ -90,10 +97,11 @@ class MainActivity : AppCompatActivity(), Navigable {
         }.commit()
     }
 
-    fun goToFragmentAndAddToBackStack(fragment: Fragment, tag : String) {
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.container, fragment, tag)
-            addToBackStack(tag)
-        }.commit()
+    override fun onBackPressed() {
+        if ( level > 0 ) {
+            navigate(Navigable.Destination.Alarm)
+        } else {
+            finish()
+        }
     }
 }

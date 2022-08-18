@@ -2,6 +2,7 @@ package pl.ascendit.onetimealarm.fragment
 
 import android.content.Context
 import android.os.Bundle
+import android.os.SystemClock
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -29,6 +30,7 @@ class AlarmFragment : Fragment(), Loadable {
     private lateinit var timePicker: MaterialTimePicker
     var adapter: AlarmItemAdapter? = null
     var onAdapterCreated: (adapter : AlarmItemAdapter) -> Unit = {}
+    var btAddLastClickTime = 0L
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -42,6 +44,7 @@ class AlarmFragment : Fragment(), Loadable {
         savedInstanceState: Bundle?
     ): View? {
         return FragmentAlarmBinding.inflate(inflater, container, false).also {
+            container!!.removeAllViews()
             binding = it
         }.root
     }
@@ -101,7 +104,10 @@ class AlarmFragment : Fragment(), Loadable {
         }
 
         binding.btAdd.setOnClickListener {
-            timePicker.show(parentFragmentManager, "timePickerAdd")
+            if ( ! ( SystemClock.elapsedRealtime() - btAddLastClickTime < 1000 )){ // prevent double click
+                btAddLastClickTime = SystemClock.elapsedRealtime()
+                timePicker.show(parentFragmentManager, "timePickerAdd")
+            }
         }
     }
 
