@@ -7,7 +7,7 @@ This app solves this use case. After alarm is fired it is deleted, it doesn't ha
 READ BEFORE USE!
 In this app it's only possible to set alarms which don't repeat and only for today or tomorrow!
 Don't expect this app to be used as a replacement for your standard alarm app or calendar! 
-It's a diferent type of application! It is not a calendar or standard alarm clock app.
+It's a different type of application! It is not a calendar or standard alarm clock app.
 
 # Screenshots
 ### Alarm view
