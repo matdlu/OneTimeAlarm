@@ -21,7 +21,8 @@
     <string name="app_name">Jednorazowy alarm</string>
     <string name="about_thank_you">Dziękuje za korzystanie z mojej aplikacji</string>
     <string name="app_long_name">Jednorazowy alarm</string>
-    <string name="version_info">Jednorazowy alarm, wersja 1.0</string>
+    <string name="version">wersja</string>
+    <string name="version_info">Jednorazowy alarm</string>
     <string name="about_contact_me">Skontaktuj się ze mną</string>
     <string name="about_find_me">Znajdź mnie na</string>
     <string name="mail_subject">OTA: Temat</string>

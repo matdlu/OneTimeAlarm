@@ -21,6 +21,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="pl.ascendit.onetimealarm">
 
+    <!-- zobaczyć jak działa na tabletach
+    <supports-screens
+        android:anyDensity="false"
+        android:largeScreens="false"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+    -->
+
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.USE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
