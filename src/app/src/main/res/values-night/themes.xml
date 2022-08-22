@@ -23,6 +23,7 @@
     <item name="colorPrimary">@color/primary</item>
     <item name="colorPrimaryVariant">@color/accent</item>
     <item name="colorOnPrimary">@color/primaryTextLight</item>
+    <item name="colorPrimaryDark">@color/icons</item>
     <!-- Secondary brand color. -->
     <item name="colorSecondary">@color/primary</item>
     <item name="colorSecondaryVariant">@color/primaryDark</item>
