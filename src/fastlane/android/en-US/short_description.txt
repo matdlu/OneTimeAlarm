@@ -1,1 +1,1 @@
-Creating alarm reminders which delete themselves automatically after firing. 
+Alarm reminders which delete themselves automatically after firing. 

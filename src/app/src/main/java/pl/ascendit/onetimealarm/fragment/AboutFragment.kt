@@ -20,6 +20,7 @@ package pl.ascendit.onetimealarm.fragment
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -49,6 +50,13 @@ class AboutFragment : Fragment() {
         val websiteUrl = getString(R.string.website_url)
         val githubUrl = getString(R.string.github_url)
         val linkedinUrl = getString(R.string.linkedin_url)
+
+        val pkgName = context?.packageName
+        val pm = context?.getPackageManager()
+        val pkgInfo = pkgName?.let { pm?.getPackageInfo(it, 0) }
+        val versionInfo = "${getString(R.string.version_info)}, ${getString(R.string.version)} ${pkgInfo?.versionName}"
+
+        binding.tvVersion.text = versionInfo
 
         binding.ivMail.setOnClickListener {
             sendMail(mailAddress, mailSubject)

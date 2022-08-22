@@ -22,7 +22,8 @@
     <string name="about_thank_you">Thank you for using my app</string>
     <string name="about_contact_me">Contact me</string>
     <string name="about_find_me">Find me on</string>
-    <string name="version_info">OneTimeAlarm, version 1.0</string>
+    <string name="version">version</string>
+    <string name="version_info">OneTimeAlarm</string>
     <string name="mail_subject">OTA: Subject</string>
     <string name="website_url">https://www.matdlu.com</string>
     <string name="mail_address">support@ascendit.pl</string>
