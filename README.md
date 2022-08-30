@@ -9,6 +9,14 @@ In this app it's only possible to set alarms which don't repeat and only for tod
 Don't expect this app to be used as a replacement for your standard alarm app or calendar! 
 It's a different type of application! It is not a calendar or standard alarm clock app.
 
+# Download
+
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="80">](https://f-droid.org/packages/pl.ascendit.onetimealarm/)
+
+or get the APK from the [Releases section](https://github.com/matdlu/OneTimeAlarm/releases/latest).
+
 # Screenshots
 ### Alarm view
 ![Alarm screen](./store/en/screens/alarms.png)
