@@ -65,10 +65,10 @@ class NotificationReceiver : BroadcastReceiver() {
         val notificationId = AlarmLogic.getNotificationId(datetimeStr)
 
         val buttonReceiverPendingIntent = PendingIntentHelper.createButtonReceiver(context, datetimeStr, notificationId)
-        val stopAlarmPendingIntent = PendingIntentHelper.createStopAlarm(context, datetimeStr, triggered.time24(), triggered.name)
+        val stopAlarmPendingIntent = PendingIntentHelper.createStopAlarm(context, datetimeStr, triggered.timeStr(), triggered.name)
         val builder = NotificationCompat.Builder(context, CHANNEL_ID).apply {
             setSmallIcon(R.drawable.ic_baseline_alarm_24)
-            setContentTitle(triggered.time24())
+            setContentTitle(triggered.timeStr())
             if ( ! triggered.name.isEmpty() ) {
                 setContentText(triggered.name)
             }

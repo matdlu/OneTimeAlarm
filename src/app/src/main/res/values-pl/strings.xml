@@ -53,4 +53,5 @@
     <string name="dialog_delete">Usuń</string>
     <string name="menu_settings">Ustawienia</string>
     <string name="menu_about">Informacje o aplikacji</string>
+    <string name="clock12">Zegar 12 godzinny</string>
 </resources>

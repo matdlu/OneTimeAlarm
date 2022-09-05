@@ -18,8 +18,6 @@
 
 package pl.ascendit.onetimealarm.adapter
 
-import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -28,13 +26,12 @@ import pl.ascendit.onetimealarm.able.Updatable
 import pl.ascendit.onetimealarm.data.alarm.Alarm
 import pl.ascendit.onetimealarm.databinding.AlarmItemBinding
 import pl.ascendit.onetimealarm.helper.TimeHelper
-import pl.ascendit.onetimealarm.logic.AlarmLogic
 
 class AlarmItemViewHolder(val binding: AlarmItemBinding)
     : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(alarm: Alarm, dayStr: String) {
-        binding.tvTime.text = alarm.time24()
+        binding.tvTime.text = alarm.timeStr()
         binding.tvDay.text = dayStr
         binding.tvName.text = alarm.name
     }

@@ -27,15 +27,18 @@ object SettingsLogic {
     val ringtoneDefault = ""
     val soundDefault = true
     val vibrateDefault = true
+    val clock12Default = false
 
     var vibrateOn: Boolean = vibrateDefault
     var soundOn: Boolean = soundDefault
+    var clock12On: Boolean = clock12Default
 
     fun load(context: Context) {
         Log.d(lTag, "preferences loading")
         val preferences = PreferenceManager.getDefaultSharedPreferences(context)
         soundOn = preferences.getBoolean("sound", soundDefault)
         vibrateOn = preferences.getBoolean("vibrate", vibrateDefault)
+        clock12On = preferences.getBoolean("clock12", clock12Default)
         Log.d(lTag, "preferences loaded")
     }
 
@@ -47,4 +50,7 @@ object SettingsLogic {
         vibrateOn = value
     }
 
+    fun setClock12(value: Boolean) {
+        clock12On = value
+    }
 }

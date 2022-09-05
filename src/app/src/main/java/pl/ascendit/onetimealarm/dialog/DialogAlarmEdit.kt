@@ -32,7 +32,6 @@ import pl.ascendit.onetimealarm.data.alarm.Alarm
 import pl.ascendit.onetimealarm.databinding.DialogAlarmEditBinding
 import pl.ascendit.onetimealarm.helper.TimeHelper
 import pl.ascendit.onetimealarm.helper.TimePickerHelper
-import java.time.LocalDate
 import java.time.LocalDateTime
 
 class DialogAlarmEdit(var alarm: Alarm) : DialogFragment() {
@@ -74,7 +73,7 @@ class DialogAlarmEdit(var alarm: Alarm) : DialogFragment() {
         binding.tfTime.editText?.setOnClickListener {
             timePicker.show(parentFragmentManager, "timePickerEdit")
         }
-        binding.tfTime.editText?.setText(alarm.time24())
+        binding.tfTime.editText?.setText(alarm.timeStr())
 
         // tfDay
         val items = listOf(todayStr, tommorowStr)

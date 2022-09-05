@@ -30,7 +30,7 @@ data class Alarm (
     var datetime: LocalDateTime = LocalDateTime.now(),
     var name : String = "",
 ) {
-    fun time24() : String {
+    fun timeStr() : String {
         return TimeHelper.format(datetime)
     }
 

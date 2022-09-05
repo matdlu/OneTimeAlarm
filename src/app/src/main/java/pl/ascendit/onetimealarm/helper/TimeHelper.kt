@@ -18,6 +18,7 @@
 
 package pl.ascendit.onetimealarm.helper
 
+import pl.ascendit.onetimealarm.logic.SettingsLogic
 import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.ZoneId
@@ -25,10 +26,15 @@ import java.time.format.DateTimeFormatter
 
 object TimeHelper {
     private val sep = ":"
-    val formatter =  DateTimeFormatter.ofPattern("HH${sep}mm")
+    val formatter24h = DateTimeFormatter.ofPattern("HH${sep}mm")
+    val formatter12h = DateTimeFormatter.ofPattern("h${sep}mm a")
 
     fun format(datetime: LocalDateTime) : String {
-        return datetime.format(formatter)
+        if ( SettingsLogic.clock12On ) {
+            return datetime.format(formatter12h)
+        } else {
+            return datetime.format(formatter24h)
+        }
     }
 
     fun toEpochMilli(datetime: LocalDateTime) : Long {
