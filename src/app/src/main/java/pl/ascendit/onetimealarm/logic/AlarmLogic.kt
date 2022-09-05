@@ -68,7 +68,11 @@ object AlarmLogic {
         thread {
             val oldAlarm = alarmDatabase.alarms.get(newAlarm.id)
             alarmDatabase.alarms.update(newAlarm)
-            unscheduleAlarm(context, oldAlarm)
+            if ( oldAlarm != null ) {
+                unscheduleAlarm(context, oldAlarm)
+            } else {
+                Log.e(lTag, "cannot find old alarm")
+            }
         }
         scheduleAlarm(context, newAlarm)
     }

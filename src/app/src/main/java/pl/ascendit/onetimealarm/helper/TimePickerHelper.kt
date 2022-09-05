@@ -21,9 +21,10 @@ package pl.ascendit.onetimealarm.helper
 import com.google.android.material.timepicker.MaterialTimePicker
 import com.google.android.material.timepicker.TimeFormat
 import pl.ascendit.onetimealarm.logic.SettingsLogic
+import java.time.LocalTime
 
 object TimePickerHelper {
-    fun build(hour: Int = 8, minute: Int = 0) : MaterialTimePicker {
+    fun build(hour: Int = LocalTime.now().hour, minute: Int = LocalTime.now().minute) : MaterialTimePicker {
         val timeFormat = if ( SettingsLogic.clock12On ) TimeFormat.CLOCK_12H else TimeFormat.CLOCK_24H
         return MaterialTimePicker.Builder()
             .setTimeFormat(timeFormat)
