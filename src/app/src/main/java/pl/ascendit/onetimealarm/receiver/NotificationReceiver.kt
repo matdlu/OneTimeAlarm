@@ -32,6 +32,7 @@ import pl.ascendit.onetimealarm.helper.PendingIntentHelper
 import pl.ascendit.onetimealarm.logic.AlarmLogic
 import pl.ascendit.onetimealarm.logic.SoundLogic
 import java.time.LocalDateTime
+import kotlin.concurrent.thread
 
 class NotificationReceiver : BroadcastReceiver() {
     private val lTag = "NotificationReciever"
@@ -54,6 +55,11 @@ class NotificationReceiver : BroadcastReceiver() {
             return
         }
         Log.d(lTag, "triggered alarm: ${triggered}")
+
+        thread {
+            SoundLogic.play()
+        }
+
         AlarmLogic.deleteAlarm(context, datetimeStr, true)
 
         val notificationId = AlarmLogic.getNotificationId(datetimeStr)
@@ -77,8 +83,6 @@ class NotificationReceiver : BroadcastReceiver() {
             val notification = builder.build()
             notify(notificationId, notification)
         }
-
-        SoundLogic.play()
     }
 
     companion object {
